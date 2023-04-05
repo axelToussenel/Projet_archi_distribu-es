@@ -24,6 +24,6 @@ Nous n'avons malheureusement pas pu terminer ce projet pour différentes raisons
 
 Pour une bonne visualisation, nous avons imaginé des "camemberts" de ce type :
 
-![Dessin sans titre](https://user-images.githubusercontent.com/91553182/230185101-a231e69e-0336-400f-99ed-6eb6c62a803d.png)
+![Dessin sans titre](https://user-images.githubusercontent.com/91553182/230186369-bc1eb2ac-fa3c-4f74-b53c-95c59cc7c93a.png)
 
 Ou même aller plus loin en créant une carte intéractive !
