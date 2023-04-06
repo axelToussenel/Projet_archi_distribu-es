@@ -69,7 +69,11 @@ Relancez un **producer** sur un nouvelle invite de commande en précisant que vo
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic 'mon_topic' --property "parse.key=true" --property "key.separator=:"
 ```
 
-Vous pourrez ainsi envoyer des messages adapté au format **clé-valeur**.
+Vous pourrez ainsi envoyer des messages adapté au format **clé-valeur**. La clé est séparée de la valeur par 2 points. Par exemple :
+```
+1:valeur1
+```
+
 Nous avons réussi à aller jusque là dans le projet, malheureusment nous ne parvenons pas à alimenter la base **MongoDB** avec nos données.
 
 
