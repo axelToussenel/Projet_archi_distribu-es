@@ -43,6 +43,8 @@ kafka-console-consumer.sh --topic 'mon_topic' --bootstrap-server localhost:9092
 
 Quand vous écrivez des messages du côté **Producer**, ils s'affichent côté **Consumer**. 
 
+Nous avons ensuite créé un script python (**producer.py**) pour automatiser cela. Gardez votre invite de commande qui contient le **consumer** ouvert et exéutez notre **producer.py**, le **consummer** reçoit l'API que nous avons récupérée.
+
 ### Spark-submit
 Maintenant, nous allons soumettre un traitement via **Spark-submit**.
 
