@@ -9,13 +9,17 @@ Dans ce Readme sera expliqué le cheminement à travers différents outils comme
 
 ## Méthodologie
 
-Il vous faudra dans un premier temps vous devrez créer un container **Kafka**, **Zookeeper**, **Spark Master** et **Spark Worker** dans votre plateforme Docker. Pour cela, exécutez le docker-compose disponible dans ce répertoire via la commande :
+Il vous faudra dans un premier temps créer un container **Kafka**, **Zookeeper**, **Spark Master** et **Spark Worker** dans votre plateforme Docker. Pour cela, exécutez le docker-compose disponible dans ce répertoire via la commande :
 ```
 docker-compose up -d
 ```
 
 Vous pouvez vérifier la bonne création de vos container via la commande *docker ps* ou votre logiciel Docker Desktop.
 
+Ensuite tester votre **Kafka**, lancez votre bash Kafka :
+```
+docker exec -it *container Kafka* bash
+```
 
 Une fois sur l'invite de commandes **Kafka**, vous pouvez lancer :
 
@@ -28,6 +32,11 @@ kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost
 ```
 kafka-console-consumer.sh --topic quickstart-events --bootstrap-server localhost:9092
 ```
+
+Quand vous écrivez des messages du côté **Producer**, ils s'affichent côté **Consumer**. 
+
+Maintenant, nous allons soumettre un traitement via **Spark-submit**.
+
 
 ## Finalité du projet
 Nous n'avons malheureusement pas pu terminer ce projet pour différentes raisons, nous allons tout de même détailler le Dashboard comme nous l'aurions conçu.
