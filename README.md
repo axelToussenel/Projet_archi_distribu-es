@@ -1,4 +1,4 @@
-# Projet_archi_distribuées
+# Projet_archi_distribuées <img src="https://icones8.fr/icon/Qejoymx0g1R4/architecture" width="30" height="30">
 
 Ce github contient notre projet d'*Architecture Distribuée* encadré par M. Lima. Nous avons décidé de travailler sur une corrélation entre la **concentration de vélib** et le **taux de pollution** par zone géographique dans la capitale.
 
