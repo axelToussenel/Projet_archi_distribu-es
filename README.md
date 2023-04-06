@@ -17,23 +17,28 @@ docker-compose up -d
 Vous pouvez vérifier la bonne création de vos container via la commande *docker ps* ou votre logiciel Docker Desktop.
 
 
-### Kafka
+### Kafka et Zookeeper
+
+Créez votre **Topic** :
+```
+kafka-topics.sh --create --bootstrap-server localhost:9092 --topic 'mon_topic'
+```
 
 Ensuite accédez à **Kafka** :
 ```
 docker exec -it 'container_kafka' bash
 ```
 
-Une fois sur l'invite de commandes **Kafka**, vous créer :
+Une fois 2 invites de commandes **Kafka** ouverts, vous créez :
 
   - Un **Producer**, qui écrit les données. Il les envoie à un **Topic** ou "catégorie" dans lequel les messages sont stockés et publiés.
 ```
-kafka-console-producer.sh --topic 'montopic' --bootstrap-server localhost:9092
+kafka-console-producer.sh --topic 'mon_topic' --bootstrap-server localhost:9092
 ```
 
   - Un **Consumer**, celui qui s’occupe de lire les données.
 ```
-kafka-console-consumer.sh --topic 'montopic' --bootstrap-server localhost:9092
+kafka-console-consumer.sh --topic 'mon_topic' --bootstrap-server localhost:9092
 ```
 
 Quand vous écrivez des messages du côté **Producer**, ils s'affichent côté **Consumer**. 
@@ -52,8 +57,20 @@ Ensuite quittez le **root** et relancer votre bash Spark :
 docker exec -it 'container_spark_master' bash
 ```
 
-Ensuite ajouter le fichier python de votre traitement à soumettre où vous le souhaitez.
+Ensuite ajouter le fichier python de votre traitement à soumettre (**submit.py**) où vous le souhaitez et soumettez le à **Spark** :
+```
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 submit.py
+```
 
+Le traitement se lance et un tableau **clé-valeur** se présente finalement à vous.
+
+Relancez un **producer** sur un nouvelle invite de commande en précisant que vous utilisez une clé :
+```
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic 'mon_topic' --property "parse.key=true" --property "key.separator=:"
+```
+
+Vous pourrez ainsi envoyer des messages adapté au format **clé-valeur**.
+Nous avons réussi à aller jusque là dans le projet, malheureusment nous ne parvenons pas à alimenter la base **MongoDB** avec nos données.
 
 
 ## Finalité du projet
