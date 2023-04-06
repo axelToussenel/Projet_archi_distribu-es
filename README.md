@@ -18,19 +18,19 @@ Vous pouvez vérifier la bonne création de vos container via la commande *docke
 
 Ensuite tester votre **Kafka**, lancez votre bash Kafka :
 ```
-docker exec -it *container Kafka* bash
+docker exec -it 'container Kafka' bash
 ```
 
 Une fois sur l'invite de commandes **Kafka**, vous pouvez lancer :
 
   - Un **Producer**, qui écrit les données. Il les envoie à un **Topic** ou "catégorie" dans lequel les messages sont stockés et publiés.
 ```
-kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+kafka-console-producer.sh --topic montopic --bootstrap-server localhost:9092
 ```
-  
+
   - Un **Consumer**, celui qui s’occupe de lire les données.
 ```
-kafka-console-consumer.sh --topic quickstart-events --bootstrap-server localhost:9092
+kafka-console-consumer.sh --topic montopic --bootstrap-server localhost:9092
 ```
 
 Quand vous écrivez des messages du côté **Producer**, ils s'affichent côté **Consumer**. 
