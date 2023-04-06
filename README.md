@@ -1,4 +1,4 @@
-# Projet_archi_distribuées
+# Projet_archi_distribuées ![icons8-architecture-32](https://user-images.githubusercontent.com/91553182/230304758-6aa48d7a-aa54-450c-9e4d-6a8a2dd910a0.png)
 
 ## Introduction du projet <img src="https://icones8.fr/icon/Qejoymx0g1R4/architecture" width="30" height="30">
 
