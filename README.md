@@ -16,9 +16,9 @@ docker-compose up -d
 
 Vous pouvez vérifier la bonne création de vos container via la commande *docker ps* ou votre logiciel Docker Desktop.
 
-Ensuite tester votre **Kafka**, lancez votre bash Kafka :
+Ensuite accédez à **Kafka** :
 ```
-docker exec -it 'container Kafka' bash
+docker exec -it 'container_kafka' bash
 ```
 
 Une fois sur l'invite de commandes **Kafka**, vous pouvez lancer :
@@ -36,6 +36,12 @@ kafka-console-consumer.sh --topic montopic --bootstrap-server localhost:9092
 Quand vous écrivez des messages du côté **Producer**, ils s'affichent côté **Consumer**. 
 
 Maintenant, nous allons soumettre un traitement via **Spark-submit**.
+
+S'il vous manque des installations, vous devrez vous mettre en **root** :
+```
+docker exec -u root -it 'container_kafka' bash
+```
+Et utilisez 'apt-get update', 'apt install nano', 'apt install python3', 'apt install  python3-pip', 'pip install requests', 'pip install kafka-python'.
 
 
 ## Finalité du projet
