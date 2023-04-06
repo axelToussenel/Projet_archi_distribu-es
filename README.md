@@ -28,12 +28,12 @@ Une fois sur l'invite de commandes **Kafka**, vous créer :
 
   - Un **Producer**, qui écrit les données. Il les envoie à un **Topic** ou "catégorie" dans lequel les messages sont stockés et publiés.
 ```
-kafka-console-producer.sh --topic montopic --bootstrap-server localhost:9092
+kafka-console-producer.sh --topic 'montopic' --bootstrap-server localhost:9092
 ```
 
   - Un **Consumer**, celui qui s’occupe de lire les données.
 ```
-kafka-console-consumer.sh --topic montopic --bootstrap-server localhost:9092
+kafka-console-consumer.sh --topic 'montopic' --bootstrap-server localhost:9092
 ```
 
 Quand vous écrivez des messages du côté **Producer**, ils s'affichent côté **Consumer**. 
@@ -43,9 +43,17 @@ Maintenant, nous allons soumettre un traitement via **Spark-submit**.
 
 S'il vous manque des installations, vous devrez vous mettre en **root** :
 ```
-docker exec -u root -it 'container_kafka' bash
+docker exec -u root -it 'container_spark_master' bash
 ```
-Et utilisez 'apt-get update', 'apt install nano', 'apt install python3', 'apt install  python3-pip', 'pip install requests', 'pip install kafka-python'.
+Et utilisez 'apt-get update', 'apt install nano', 'apt install python3', 'apt install  python3-pip', 'pip install requests', 'pip install kafka-python' pour ajouter ce qu'il vous manque potentiellement.
+
+Ensuite quittez le **root** et relancer votre bash Spark :
+```
+docker exec -it 'container_spark_master' bash
+```
+
+Ensuite ajouter le fichier python de votre traitement à soumettre où vous le souhaitez.
+
 
 
 ## Finalité du projet
